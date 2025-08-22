@@ -44,18 +44,19 @@ To rebalance the dataset, we will deploy a SMOTE node and change Decision Tree m
 In the SMOTE node, target column is Churn and keep the default settings.
 
 ## Random Forest Confusion Matrix (with SMOTE node)  
-scorer
+<img width="1000" height="480" alt="Image" src="https://github.com/user-attachments/assets/e268a1c9-b498-4749-8744-7075f439588e" />
+
 Before balancing, the model was missing most of the Churners (Class 1).  After applying SMOTE, the model showed much improved performance from pre-SMOTE. For Class 1, there are 3806 True Positives (correctly predicted 1s) and 5106 False Negatives (model failed to predict churn when the actual was churned). With recall at 42%, the model still misses more than half of customers who are actually at risk of churning.  
 The model is now better at identifying potential churners, but not perfect. We can still make actionable business recommendations to reduce churn, focusing on those correctly identified churners (TP = 3,806) and considering the missed churners (FN = 5,106).  
 
-attribute imge
-Out of the input variables considered by the Random Forest, Transaction_Count has the highest split count at level 2 among all features. This shows how many times a customer transact is the strongest predictor in the model.  
-Followed closely as high influential features are Return_Rate and Avg_Order_Value.  
+<img width="750" height="300" alt="Image" src="https://github.com/user-attachments/assets/ba237a90-a8c6-4907-810b-98f581947a51" />
+
+Out of the input variables considered by the Random Forest, Transaction_Count has the highest split count at level 2 among all features. This shows how many times a customer transact is the strongest predictor in the model.  It is followed closely by Return_Rate and Avg_Order_Value as high influential features.    
 
 In summary, customer transaction frequency is the key driver of the model. Return behaviour and spending amount per order add significant predictive power.  
 
 ## Recommendations  
   1. Targeted campaign prioritized for the 43% correctly identify as churners to reduce the chance of them leaving.
-  2. The variable importance in the attribute statistics showed certain behaviour correlates with customer churn. Since the Return rate was flagged as a strong predictor of the model, then the ecommerce company could conduct regular product quality audit as well as making product returns less of a pain point for the customers and providing exchanges and refunds in a hassle-free and fast process.
+  2. The variable importance in the attribute statistics showed certain behaviour correlates with customer churn. Since the Return rate was flagged as a strong predictor of the model, then the ecommerce company could conduct regular product quality audit as well as making product returns less of a pain point for the customers and providing exchanges and refunds in a hassle-free and expeditious process.
 
 Back to [Projects portfolio](https://cheeweeng.github.io)
